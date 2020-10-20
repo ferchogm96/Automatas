@@ -1,0 +1,54 @@
+\documentclass[letterpaper,10pt]{article}
+
+% Soporte para los acentos.
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+% Idioma español.
+\usepackage[spanish,mexico, es-tabla]{babel}
+% Soporte de símbolos adicionales (matemáticas)
+\usepackage{multirow}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{latexsym}
+\usepackage{enumerate}
+\usepackage{ragged2e}
+% Soporte para imágenes.
+\usepackage{graphicx}
+% Soporte para código.
+\usepackage{listings}
+% Soporte para URL.
+\usepackage{hyperref}
+\usepackage[all]{xy} %para diagramas conmutativos
+% Modificamos los márgenes del documento.
+\usepackage[lmargin=2cm,rmargin=2cm,top=2cm,bottom=2cm]{geometry}
+
+\title{Autómatas y Lenguajes Formales \\ Tarea 3}
+\author{González Montiel Luis Fernando \\
+        Isai Uzziel García Pérez }
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{enumerate}
+
+    % Ejercicio 1.
+    \item En ciertos lenguajes de programación, los comentarios aparecen entre delimitadores tales
+como /\# y \#/. Sea C el lenguaje de todos los comentarios delimitados de forma válida. Un miembro
+de C debe empezar con /\# y terminar con \#/ sin que haya en medio ningún \#/. Por simplicidad,
+consideramos como alfabeto de las cadenas de entrada a $\Sigma$ = $\lbrace$a,b,/,\#$\rbrace$. Dé una expresión regular
+que genere a C. Aquí unos ejemplos en el lenguaje de programación C++(\# es reemplazado por *): \\
+	
+    \textsc{Solución:}
+    \\
+    1.- /\#(a+b+/+$\#^{+}$(a+b)$)^{*}$ $\#^{*}$ \#/ \\
+    2.- /\#/ *(($\#^{*}$ $a^{+}$ $/^{*}$)+($\#^{*}$ $b^{+}$ $/^{*}$)$)^{*}$ $\#^{*}$ \#/ \\
+    3.- /\#((a+b+/$)^{*}$ ($\varepsilon$+$\#^{+}$ (a+b$)^{+}$)$)^{*}$ $\#^{*}$\#/
+    
+ \end{enumerate}
+
+
+
+\end{document}
